@@ -29,8 +29,8 @@ $siteNameSafe = htmlspecialchars($siteName, ENT_QUOTES, 'UTF-8');
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="<?php echo $siteTitleSafe; ?>">
 <meta name="twitter:description" content="<?php echo $siteDescriptionSafe; ?>">
-<link rel="icon" href="assets/img/ms.ico">
-<link rel="stylesheet" href="assets/css/style.css">
+<link rel="icon" href="ms.ico">
+<link rel="stylesheet" href="style.css">
 <style>
 #loader-overlay {
     position: fixed !important;
@@ -53,7 +53,7 @@ $siteNameSafe = htmlspecialchars($siteName, ENT_QUOTES, 'UTF-8');
 <body>
 <div id="loader-overlay">
     <img
-        src="assets/images/ani.gif"
+        src="ani.gif"
         alt="Loading..."
         onerror="this.style.display='none'; this.parentElement.innerText='Loading...';"
     >
