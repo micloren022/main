@@ -1,0 +1,294 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  min-height: 100dvh;
+  color: #1a202c;
+  background-color: #f7fafc;
+}
+
+.container {
+  display: flex;
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+/* =========================================
+   LEFT PANEL - VERY LIGHT BLACK TINT
+   ========================================= */
+.left-panel {
+  width: 50%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  align-items: flex-end; /* Pushes text to the bottom */
+  justify-content: flex-start;
+  padding: 60px;
+  color: white;
+  
+  /* Very light black (dark gray) overlay so the image shows naturally */
+  background-image: 
+    linear-gradient(to top, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.2) 100%),
+    url("../img/bmn.png"); /* Your left image */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+  position: relative;
+  overflow: hidden;
+}
+
+.left-panel-content {
+  position: relative;
+  z-index: 2;
+  max-width: 480px;
+  margin-bottom: 20px;
+}
+
+.left-panel h1 {
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  letter-spacing: -1px;
+  text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+}
+
+.left-panel p {
+  color: #ffffff; 
+  font-size: 17px;
+  line-height: 1.7;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+}
+
+/* =========================================
+   RIGHT PANEL - WITH RELATIVE IMAGE PATH
+   ========================================= */
+.right-panel {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 30px;
+  
+  /* Right side image (relative path) */
+  background-image: url("../img/epg.png"); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* FROSTED GLASS BOX FOR THE FORM */
+.login-box {
+  width: 100%;
+  max-width: 420px;
+  background-color: rgba(255, 255, 255, 0.85); 
+  backdrop-filter: blur(10px); 
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* --- MICROSOFT BRAND STYLES --- */
+.brand-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.brand-icon {
+  width: 26px;
+  height: 26px;
+  margin-right: 12px; 
+  display: inline-block;
+}
+
+.brand-logo {
+  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: #000000;
+  letter-spacing: -0.5px;
+  display: inline-block;
+}
+
+h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1a202c;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  color: #4a5568; 
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 32px;
+}
+
+/* Inputs */
+.input-group, .email-group {
+  position: relative;
+  margin-bottom: 24px;
+}
+
+.input-group input, .email-group input {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid #cbd5e0;
+  border-radius: 8px;
+  outline: none;
+  font-size: 15px;
+  background: #ffffff;
+  color: #1a202c;
+  transition: all 0.2s ease;
+}
+
+.input-group input:focus, .email-group input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+.input-group input::placeholder, .email-group input::placeholder {
+  color: #a0aec0;
+}
+
+/* Floating Label for Email */
+.email-group label {
+  position: absolute;
+  top: 14px;
+  left: 16px;
+  font-size: 15px;
+  color: #a0aec0;
+  pointer-events: none;
+  transition: 0.2s ease all;
+  background: #ffffff;
+  padding: 0 4px;
+}
+
+.email-group input:focus ~ label,
+.email-group input:not(:placeholder-shown) ~ label {
+  top: -10px;
+  left: 12px;
+  font-size: 12px;
+  color: #3b82f6;
+  font-weight: 600;
+}
+
+/* Back Header */
+.email-header {
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 24px;
+  cursor: pointer;
+  color: #4a5568;
+  width: fit-content;
+  transition: color 0.2s;
+}
+
+.email-header:hover {
+  color: #1a202c;
+}
+
+.back-arrow-img {
+  width: 18px;
+  height: 18px;
+  margin-right: 12px;
+  display: inline-block;
+}
+
+.forgot-link {
+  display: inline-block;
+  color: #3b82f6;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 24px;
+}
+
+.forgot-link:hover {
+  text-decoration: underline;
+}
+
+button {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  background: #1e3a8a;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+button:hover {
+  background: #152c6b;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* Error Message */
+.error-message {
+  display: none;
+  background-color: #fef2f2;
+  color: #dc2626;
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  margin-bottom: 20px;
+  border: 1px solid #fecaca;
+}
+
+footer {
+  margin-top: 40px;
+  text-align: left;
+  color: #718096;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+/* --- MOBILE RESPONSIVENESS --- */
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column; 
+  }
+  
+  .left-panel {
+    width: 100%;
+    min-height: 300px; 
+    padding: 40px 24px;
+    align-items: flex-end; 
+    text-align: left;
+  }
+  
+  .left-panel h1 {
+    font-size: 28px;
+  }
+  
+  .left-panel p {
+    font-size: 15px;
+  }
+  
+  .right-panel {
+    width: 100%;
+    padding: 40px 24px;
+    align-items: flex-start; 
+    min-height: calc(100vh - 300px);
+  }
+  
+  .login-box {
+    max-width: 100%;
+    padding: 24px;
+  }
+}
